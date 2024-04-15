@@ -1,0 +1,11 @@
+@mixin interFont($fs, $fw) {
+  font-family: var(--main-font-family);
+  font-size: $fs;
+  font-weight: $fw;
+}
+
+@mixin montserratFont($fs, $fw) {
+  font-family: var(--title-font-family);
+  font-size: $fs;
+  font-weight: $fw;
+}

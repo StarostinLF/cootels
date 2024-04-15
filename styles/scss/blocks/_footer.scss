@@ -1,0 +1,109 @@
+@import "../config/mixins";
+
+/* Cтили подвала (Footer) */
+
+.footer {
+  padding: 50px 0;
+  color: var(--footer-color);
+  background: var(--footer-background-color);
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+
+    @media (width <= 768px) {
+      flex-direction: column;
+      justify-content: center;
+      gap: 50px;
+    }
+  }
+
+  &__logo {
+    color: var(--icon-color);
+
+    &-container {
+      flex: 0 0 auto;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+
+      @media (width <= 768px) {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 200px;
+    width: 100%;
+    color: var(--text-color);
+  }
+
+  &__icon {
+    fill: var(--icon-color);
+
+    &:hover {
+      fill: var(--text-color);
+    }
+
+    &-list {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-container {
+      flex: 0 0 auto;
+      width: 50%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+
+      @media (width <= 768px) {
+        width: 100%;
+        order: -1;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    &-title {
+      @include interFont(var(--main-font-size), 400);
+      color: var(--footer-color);
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @media (width <= 768px) {
+        gap: 10px;
+      }
+    }
+
+    &-link {
+      color: var(--text-color);
+    }
+
+    @media (width <= 768px) {
+      text-align: center;
+      gap: 10px;
+    }
+  }
+}
