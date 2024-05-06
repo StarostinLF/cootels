@@ -27,12 +27,17 @@
       width: 90%;
 
       @media (width <= 768px) {
+        display: none;
         flex-direction: column;
         width: -webkit-fit-content;
         width: -moz-fit-content;
         width: fit-content;
         gap: 20px;
       }
+    }
+
+    &_opened {
+      display: flex;
     }
 
     &-list {
@@ -51,7 +56,6 @@
 
     @media (width <= 768px) {
       flex-direction: column;
-      display: none;
     }
   }
 
@@ -74,12 +78,6 @@
       &::before {
         transform: scaleX(1);
       }
-    }
-  }
-
-  &__button {
-    @media (width <= 768px) {
-      display: none;
     }
   }
 
@@ -108,5 +106,6 @@
 
   @media (width <= 768px) {
     justify-content: center;
+    row-gap: 50px;
   }
 }

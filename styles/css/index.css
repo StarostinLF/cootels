@@ -35,12 +35,17 @@
 
 @media (width <= 768px) {
   .header__nav-container {
+    display: none;
     flex-direction: column;
     width: -moz-fit-content;
     width: -webkit-fit-content;
     width: fit-content;
     gap: 20px;
   }
+}
+
+.header__nav_opened {
+  display: flex;
 }
 
 .header__nav-list {
@@ -62,7 +67,6 @@
 @media (width <= 768px) {
   .header__nav {
     flex-direction: column;
-    display: none;
   }
 }
 
@@ -84,12 +88,6 @@
 
 .header__link:hover::before {
   transform: scaleX(1);
-}
-
-@media (width <= 768px) {
-  .header__button {
-    display: none;
-  }
 }
 
 .header__burger-menu {
@@ -120,6 +118,7 @@
 @media (width <= 768px) {
   .header {
     justify-content: center;
+    row-gap: 50px;
   }
 }
 
