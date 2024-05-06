@@ -299,6 +299,10 @@
   }
 }
 
+.section:last-child .section__title {
+  text-align: center;
+}
+
 .section:last-child .section__image {
   width: auto;
 }
