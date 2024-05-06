@@ -105,6 +105,12 @@ a {
   transition: var(--transition);
 }
 
+.link__icon {
+  width: 18px;
+  height: 14px;
+  fill: var(--link-color);
+}
+
 button {
   font-family: inherit;
   font-size: var(--button-font-size);
@@ -150,7 +156,5 @@ img {
 }
 
 .icon {
-  width: 32px;
-  height: 32px;
   transition: var(--transition);
 }
