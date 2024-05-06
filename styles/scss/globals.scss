@@ -104,9 +104,19 @@ a {
   transition: var(--transition);
 
   &__icon {
+    margin-left: 10px;
     width: 18px;
     height: 14px;
     fill: var(--link-color);
+  }
+
+  &:hover {
+    color: var(--text-color);
+
+    .link__icon {      
+      margin-left: 5px;
+      fill: var(--text-color);
+    }
   }
 }
 

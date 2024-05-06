@@ -37,6 +37,7 @@
   .header__nav-container {
     flex-direction: column;
     width: -moz-fit-content;
+    width: -webkit-fit-content;
     width: fit-content;
     gap: 20px;
   }
@@ -173,6 +174,48 @@
   width: 40%;
 }
 
+.section__hero {
+  text-align: center;
+}
+
+.section__hero-title {
+  color: var(--title-color);
+}
+
+.section__hero-text {
+  max-width: 500px;
+  width: 100%;
+}
+
+.section__list {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+}
+
+.section__list-item {
+  max-width: 384px;
+  width: 100%;
+}
+
+@media (width <= 768px) {
+  .section__list-item {
+    width: 200px;
+  }
+}
+
+@media (width <= 1024px) {
+  .section__list {
+    gap: 50px;
+  }
+}
+
+@media (width <= 768px) {
+  .section__list {
+    flex-wrap: wrap;
+  }
+}
+
 .section:nth-child(1),
 .section:nth-child(2) {
   flex-wrap: wrap;
@@ -227,11 +270,21 @@
 
 .section:nth-child(4) {
   flex-direction: column;
+  gap: 30px;
+}
+
+.section:nth-child(4) .section__text {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section:last-child {
+  flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 
-.section:nth-child(4) .section__container {
+.section:last-child .section__container {
   width: 55%;
   text-align: center;
   display: flex;
@@ -241,23 +294,55 @@
 }
 
 @media (width <= 768px) {
-  .section:nth-child(4) .section__container {
+  .section:last-child .section__container {
     width: 100%;
   }
 }
 
-.section:nth-child(4) .section__image {
+.section:last-child .section__image {
   width: auto;
 }
 
-.section:nth-child(4) .section__text {
+.section:last-child .section__text {
   width: 100%;
   margin: 0;
 }
 
-.section:nth-child(4) .section__text:last-of-type {
+.section:last-child .section__text:last-of-type {
   font-weight: 500;
   color: var(--accent-color);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__image {
+  max-height: 489px;
+  width: 100%;
+  height: 100%;
+}
+
+.card__title {
+  margin-top: 32px;
+  color: var(--title-color);
+}
+
+@media (width <= 768px) {
+  .card__title {
+    margin-top: 16px;
+  }
+}
+
+.card__text {
+  margin: 16px 0 32px;
+}
+
+@media (width <= 768px) {
+  .card__text {
+    margin: 8px 0 16px;
+  }
 }
 
 /* Cтили подвала (Footer) */
@@ -290,6 +375,7 @@
 .footer__logo-container {
   flex: 0 0 auto;
   width: -moz-fit-content;
+  width: -webkit-fit-content;
   width: fit-content;
   display: flex;
   flex-direction: column;

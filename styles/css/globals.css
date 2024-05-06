@@ -106,9 +106,19 @@ a {
 }
 
 .link__icon {
+  margin-left: 10px;
   width: 18px;
   height: 14px;
   fill: var(--link-color);
+}
+
+.link:hover {
+  color: var(--text-color);
+}
+
+.link:hover .link__icon {
+  margin-left: 5px;
+  fill: var(--text-color);
 }
 
 button {
@@ -120,6 +130,7 @@ button {
 .button {
   padding: 10px 25px;
   height: -moz-fit-content;
+  height: -webkit-fit-content;
   height: fit-content;
   color: var(--button-text-color);
   border: none;
