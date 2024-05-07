@@ -3,7 +3,7 @@
 /* Cтили подвала (Footer) */
 
 .footer {
-  padding: 50px 0;
+  padding: 50px 50px;
   color: var(--footer-color);
   background: var(--footer-background-color);
 
@@ -107,5 +107,9 @@
       text-align: center;
       gap: 10px;
     }
+  }
+
+  @media (width <= 425px) {
+    padding: 0 10px;
   }
 }

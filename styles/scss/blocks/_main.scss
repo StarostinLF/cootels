@@ -1,3 +1,5 @@
+@import "../config/mixins";
+
 /* Cтили основного контента (Main) */
 
 .section {
@@ -17,7 +19,13 @@
     }
   }
 
+  &__subtitle {
+    font-size: var(--main-font-size);
+    color: var(--link-color);
+  }
+
   &__title {
+    @include montserratFont(clamp(1.5rem, 1.2857rem + 1.0714vw, 2.25rem), 600);
     color: var(--title-color);
   }
 
@@ -26,6 +34,18 @@
 
     @media (width <= 768px) {
       margin: 20px 0;
+    }
+  }
+
+  &__button {
+    &-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &-label {
+      color: var(--accent-color);
     }
   }
 
@@ -40,6 +60,14 @@
 
   &__image {
     width: 40%;
+
+    @media (width <= 768px) {
+      width: 60%;
+    }
+
+    @media (width <= 425px) {
+      width: 100%;
+    }
   }
 
   &__hero {
@@ -75,6 +103,22 @@
 
     @media (width <= 768px) {
       flex-wrap: wrap;
+    }
+  }
+
+  &__accordion {
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 600px;
+      width: 100%;
+    }
+  }
+
+  &:first-child {
+    .section__title {
+      font-size: var(--title-font-size);
     }
   }
 
@@ -143,6 +187,25 @@
     }
   }
 
+  &:nth-child(5) {
+    gap: 50px;
+    justify-content: space-between;
+
+    @media (width <= 768px) {
+      flex-wrap: wrap;
+
+      .section {
+        &__container {
+          text-align: center;
+        }
+
+        &__button-container {
+          justify-content: center;
+        }
+      }
+    }
+  }
+
   &:last-child {
     flex-direction: column;
     align-items: center;
@@ -181,6 +244,15 @@
       }
     }
   }
+
+  @media (width <= 425px) {
+    padding: 0 10px;
+  }
+}
+
+.card__title,
+.accordion__title {
+  font-size: clamp(1.25rem, 1.1786rem + 0.3571vw, 1.5rem);
 }
 
 .card {
@@ -208,5 +280,56 @@
     @media (width <= 768px) {
       margin: 8px 0 16px;
     }
+  }
+}
+
+.accordion {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 50px 0 rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+
+  &__title {
+    color: var(--title-color);
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__icon {
+    width: 18px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: none;
+    stroke: var(--accordion-icon-color);
+
+    &-container {
+      width: 40px;
+      height: 40px;
+      display: block;
+      position: relative;
+      border-radius: 50%;
+      background: var(--accordion-background-icon-color);
+    }
+
+    &_opened {
+      background: var(--accordion-icon-color);
+      stroke: var(--accordion-icon-hovered-color);
+      transform: rotateX(180deg);
+    }
+  }
+
+  &__text {
+    display: none;
   }
 }

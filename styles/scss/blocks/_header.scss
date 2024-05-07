@@ -1,7 +1,7 @@
 /* Cтили шапки (Header) */
 
 .header {
-  padding: 0 20px;
+  padding: 0 50px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -107,5 +107,9 @@
   @media (width <= 768px) {
     justify-content: center;
     row-gap: 50px;
+  }
+
+  @media (width <= 425px) {
+    padding: 0 10px;
   }
 }

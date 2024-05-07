@@ -3,10 +3,16 @@
 /* Cтили шапки (Header) */
 
 .header {
-  padding: 0 20px;
+  padding: 0 50px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+}
+
+@media (width <= 425px) {
+  .header {
+    padding: 0 10px;
+  }
 }
 
 .header__logo {
@@ -129,6 +135,12 @@
   display: flex;
 }
 
+@media (width <= 425px) {
+  .section {
+    padding: 0 10px;
+  }
+}
+
 .section__tab {
   display: flex;
   flex-wrap: wrap;
@@ -144,7 +156,15 @@
   }
 }
 
+.section__subtitle {
+  font-size: var(--main-font-size);
+  color: var(--link-color);
+}
+
 .section__title {
+  font-family: var(--title-font-family);
+  font-size: clamp(1.5rem, 1.2857rem + 1.0714vw, 2.25rem);
+  font-weight: 600;
   color: var(--title-color);
 }
 
@@ -156,6 +176,16 @@
   .section__text {
     margin: 20px 0;
   }
+}
+
+.section__button-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.section__button-label {
+  color: var(--accent-color);
 }
 
 .section__container {
@@ -171,6 +201,18 @@
 
 .section__image {
   width: 40%;
+}
+
+@media (width <= 768px) {
+  .section__image {
+    width: 60%;
+  }
+}
+
+@media (width <= 425px) {
+  .section__image {
+    width: 100%;
+  }
 }
 
 .section__hero {
@@ -213,6 +255,18 @@
   .section__list {
     flex-wrap: wrap;
   }
+}
+
+.section__accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.section:first-child .section__title {
+  font-size: var(--title-font-size);
 }
 
 .section:nth-child(1),
@@ -277,6 +331,25 @@
   margin-right: auto;
 }
 
+.section:nth-child(5) {
+  gap: 50px;
+  justify-content: space-between;
+}
+
+@media (width <= 768px) {
+  .section:nth-child(5) {
+    flex-wrap: wrap;
+  }
+
+  .section:nth-child(5) .section__container {
+    text-align: center;
+  }
+
+  .section:nth-child(5) .section__button-container {
+    justify-content: center;
+  }
+}
+
 .section:last-child {
   flex-direction: column;
   align-items: center;
@@ -316,6 +389,11 @@
   color: var(--accent-color);
 }
 
+.card__title,
+.accordion__title {
+  font-size: clamp(1.25rem, 1.1786rem + 0.3571vw, 1.5rem);
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -348,12 +426,69 @@
   }
 }
 
+.accordion {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 50px 0 rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+}
+
+.accordion__title {
+  color: var(--title-color);
+}
+
+.accordion__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.accordion__icon {
+  width: 18px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: none;
+  stroke: var(--accordion-icon-color);
+}
+
+.accordion__icon-container {
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: relative;
+  border-radius: 50%;
+  background: var(--accordion-background-icon-color);
+}
+
+.accordion__icon_opened {
+  background: var(--accordion-icon-color);
+  stroke: var(--accordion-icon-hovered-color);
+  transform: rotateX(180deg);
+}
+
+.accordion__text {
+  display: none;
+}
+
 /* Cтили подвала (Footer) */
 
 .footer {
-  padding: 50px 0;
+  padding: 50px 50px;
   color: var(--footer-color);
   background: var(--footer-background-color);
+}
+
+@media (width <= 425px) {
+  .footer {
+    padding: 50px 10px;
+  }
 }
 
 .footer__container {
