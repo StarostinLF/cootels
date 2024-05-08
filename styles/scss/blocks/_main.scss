@@ -320,16 +320,20 @@
       position: relative;
       border-radius: 50%;
       background: var(--accordion-background-icon-color);
-    }
 
-    &_opened {
-      background: var(--accordion-icon-color);
-      stroke: var(--accordion-icon-hovered-color);
-      transform: rotateX(180deg);
+      &_opened {
+        background: var(--accordion-icon-color);
+        stroke: var(--accordion-icon-hovered-color);
+        transform: rotateX(180deg);
+      }
     }
   }
 
   &__text {
     display: none;
+
+    &_opened {
+      display: block;
+    }
   }
 }

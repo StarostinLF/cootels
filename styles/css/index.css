@@ -467,7 +467,7 @@
   background: var(--accordion-background-icon-color);
 }
 
-.accordion__icon_opened {
+.accordion__icon-container_opened {
   background: var(--accordion-icon-color);
   stroke: var(--accordion-icon-hovered-color);
   transform: rotateX(180deg);
@@ -475,6 +475,10 @@
 
 .accordion__text {
   display: none;
+}
+
+.accordion__text_opened {
+  display: block;
 }
 
 /* Cтили подвала (Footer) */
