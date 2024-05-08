@@ -9,12 +9,6 @@
   align-items: center;
 }
 
-@media (width <= 425px) {
-  .header {
-    padding: 0 10px;
-  }
-}
-
 .header__logo {
   flex: 0 0 auto;
   align-self: center;
@@ -39,6 +33,10 @@
   width: 90%;
 }
 
+.header__nav-container_opened {
+  display: flex !important;
+}
+
 @media (width <= 768px) {
   .header__nav-container {
     display: none;
@@ -48,10 +46,6 @@
     width: fit-content;
     gap: 20px;
   }
-}
-
-.header__nav_opened {
-  display: flex;
 }
 
 .header__nav-list {
@@ -128,17 +122,17 @@
   }
 }
 
+@media (width <= 425px) {
+  .header {
+    padding: 0 10px;
+  }
+}
+
 /* Cтили основного контента (Main) */
 
 .section {
   padding: 0 50px;
   display: flex;
-}
-
-@media (width <= 425px) {
-  .section {
-    padding: 0 10px;
-  }
 }
 
 .section__tab {
@@ -389,6 +383,12 @@
   color: var(--accent-color);
 }
 
+@media (width <= 425px) {
+  .section {
+    padding: 0 10px;
+  }
+}
+
 .card__title,
 .accordion__title {
   font-size: clamp(1.25rem, 1.1786rem + 0.3571vw, 1.5rem);
@@ -483,12 +483,6 @@
   padding: 50px 50px;
   color: var(--footer-color);
   background: var(--footer-background-color);
-}
-
-@media (width <= 425px) {
-  .footer {
-    padding: 50px 10px;
-  }
 }
 
 .footer__container {
@@ -602,5 +596,11 @@
   .footer__nav {
     text-align: center;
     gap: 10px;
+  }
+}
+
+@media (width <= 425px) {
+  .footer {
+    padding: 0 10px;
   }
 }

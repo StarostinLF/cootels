@@ -26,6 +26,10 @@
       flex-wrap: wrap;
       width: 90%;
 
+      &_opened {
+        display: flex !important;
+      }
+
       @media (width <= 768px) {
         display: none;
         flex-direction: column;
@@ -34,10 +38,6 @@
         width: fit-content;
         gap: 20px;
       }
-    }
-
-    &_opened {
-      display: flex;
     }
 
     &-list {
